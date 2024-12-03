@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restyle Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <img class="logo" src="img/logo-removebg-preview.png" alt="Logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Catalogue</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calendar</a>
+          </li>
+        </ul>
+        <!-- Search Form -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 custom-search" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success custom-btn" type="submit">Search</button>
+        </form>
+        <!-- Authentication Links -->
+        <div class="auth-links ms-3 d-flex">
+          <button class="btn custom-login-btn me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Se connecter</button>
+          <button class="btn custom-signup-btn" data-bs-toggle="modal" data-bs-target="#signupModal">S'inscrire</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Se connecter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Adresse e-mail</label>
+            <input type="email" class="form-control" id="loginEmail" placeholder="Entrez votre email" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+          </div>
+          <div class="mb-3">
+            <a href="#" class="text-decoration-none" id="forgotPassword">Mot de passe oublié ?</a>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Se connecter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">S'inscrire</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="signupEmail" class="form-label">Adresse e-mail</label>
+            <input type="email" class="form-control" id="signupEmail" placeholder="Entrez votre email" required>
+          </div>
+          <div class="mb-3">
+            <label for="signupPassword" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="signupPassword" placeholder="Créez un mot de passe" required>
+          </div>
+          <div class="mb-3">
+            <label for="signupConfirmPassword" class="form-label">Confirmer le mot de passe</label>
+            <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirmez votre mot de passe" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="hero">
+  <div>
+    <h1 class="titre">Exprimez votre style, tout en simplicité.</h1>
+    <p class="par"><strong>Découvrez une marketplace unique pour acheter et vendre des vêtements avec style et éco-responsabilité.</strong></p>
+    <div class="button">
+      <a href="">
+        <button>Explorer le Catalogue</button>
+      </a>
+      <a href="">
+        <button>Rejoignez-nous</button>
+      </a>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="der">DERNIERES ANNONCES</h2>
+<div class="owl-carousel owl-theme pad">
+  <div class="item">
+    <a href="catalogue.html">
+      <img class="img" src="img/jean-noir-sanmarin-boy.jpg" alt="">
+    </a>
+  </div>
+  <div class="item">
+    <a href="catalogue.html">
+    <img class="img" src="img/fortnite-Ravage-t-shirts-07.jpg" alt="">
+      </a>
+  </div>
+  <div class="item">
+    <a href="catalogue.html">
+    <img class="img" src="img/tshirt-victoire-royale.jpg" alt="">
+    </a>
+  </div>
+  <div class="item">
+    <a href="catalogue.html">
+    <img class="img" src="img/jean-bleu-clair-delave-deeluxe-homme.jpg" alt="">
+    </a>
+  </div>
+  <div class="item">
+    <img class="img" src="img/voile.png" alt="">
+  </div>
+  <div class="item">
+    <img class="img" src="img/tissu-voile-polyester-noir.jpg" alt="">
+  </div>
+</div>
+</section>
+<section class="fonds">
+  <h2 class="titre">DES JEANS</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/jean-noir-sanmarin-boy.jpg" alt="Jean noir">
+          <p class="je">Jean bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/jean-bleu-fonce-delave-deeluxe-homme.jpg" alt="Jean noir">
+          <p class="je">Jean bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/jean-skinny-effet-use-gris-homme-project-x-paris.png" alt="Jean noir">
+          <p class="je">Jean bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/jean-bleu-clair-delave-deeluxe-homme.jpg" alt="Jean noir">
+          <p class="je">Jean bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <!-- Répétez la structure pour d'autres éléments -->
+  </div>
+  <h2 class="titre2">DES T-SHIRTS</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/fortnite-Ravage-t-shirts-07.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/fortnite-Galaxy-t-shirts-02.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/tshirt-victoire-royale.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/tshirt-chevalier-ultime-voyageur-eternel-declic.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <!-- Répétez la structure pour d'autres éléments -->
+  </div>
+  <h2 class="titre2">DES VOILES</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/voile-de-coton-vert-d-eau.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/voile.png" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/tissu-voile-coton-rouge-pas-cher-2.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="blaze">
+        <a href="#">
+          <img class="ph" src="img/tissu-voile-polyester-noir.jpg" alt="T-shirt Fortnite">
+          <p class="je">T-shirt bleu</p>
+          <p class="dis">Disponible</p>
+          <p class="prix">14€99</p>
+          <button class="but">En savoir plus</button>
+        </a>
+      </div>
+    </div>
+    <!-- Répétez la structure pour d'autres éléments -->
+  </div>
+</section>
+<section class="newsletter py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <h2 class="mb-4">Abonnez-vous à notre Newsletter</h2>
+        <p class="text-muted mb-4">
+          Restez informé des dernières nouveautés, promotions et mises à jour directement dans votre boîte mail.
+        </p>
+        <form class="d-flex flex-column flex-md-row align-items-center gap-2" action="#" method="post">
+          <input
+                  type="email"
+                  class="form-control me-2"
+                  placeholder="Entrez votre email"
+                  required
+                  aria-label="Adresse email"
+          >
+          <button type="submit" class="btn btn-primary">S'abonner</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:3
+      },
+      1000:{
+        items:5
+      }
+    }
+  })
+</script><!-- Bootstrap JS (pour le fonctionnement des modals) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
