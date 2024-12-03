@@ -1,0 +1,357 @@
+/* Styles de base */
+
+.hero {
+  height: auto;
+  max-width: 60%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Barre latérale des filtres */
+.sidebar {
+  flex: 1 1 250px;
+  max-width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #89a894;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Groupes de filtres */
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Bouton de filtre */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #d4a017;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #e17a56;
+}
+
+/* Zone principale des produits */
+.main-content {
+  flex: 3 1 700px;
+  margin-bottom: 20px;
+}
+
+.main-content h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+.product {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.product:hover {
+  transform: scale(1.03);
+}
+/* Grille de produits */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Carte produit */
+.product {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.product:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image du produit */
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.product:hover .product-image img {
+  opacity: 0.8;
+}
+
+/* Overlay au survol */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.product:hover .overlay {
+  opacity: 1;
+}
+
+.view-details {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-details:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Informations du produit */
+.product-info {
+  padding: 20px;
+  text-align: center;
+  background-color: #89a894;
+}
+
+.product-info h3 {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+}
+
+.product-info h3 a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.product-info h3 a:hover {
+  color: #e17a56;
+}
+
+.product-info .color {
+  color: #504c4c;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.product-info .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Message lorsque aucun produit n'est trouvé */
+.no-products {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  grid-column: 1 / -1;
+}
+
+/* Réactivité */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .main-content {
+    flex: 1 1 100%;
+  }
+}
+/* Logo */
+.logo {
+  width: 40px; /* Taille raisonnable pour la logo sur la navbar */
+  margin-right: 10px;
+}
+
+/* Navbar */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.custom-navbar {
+  background-color: #89a894; /* Vert sauge clair */
+  font-family: "lato", sans-serif; /* Utilisation de la police Montserrat */
+}
+
+.custom-navbar .navbar-brand {
+  color: white;
+  font-weight: 700;
+}
+
+.custom-navbar .navbar-toggler {
+  border: none;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-color: white; /* Couleur de l'icône burger en blanc */
+  width: 24px;
+  height: 2px;
+  position: relative;
+}
+
+.custom-navbar .navbar-toggler-icon::before,
+.custom-navbar .navbar-toggler-icon::after {
+  content: "";
+  background-color: white;
+  width: 24px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.custom-navbar .navbar-toggler-icon::after {
+  top: 8px;
+}
+
+/* Liens de la navbar */
+.custom-navbar .nav-link {
+  color: white !important; /* Liens blancs */
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #d4a017 !important; /* Jaune moutarde au survol */
+  transition: color 0.3s;
+}
+
+.custom-navbar .nav-link.active {
+  color: #d4a017 !important; /* Jaune moutarde pour le lien actif */
+}
+
+/* Recherche et Boutons */
+.custom-search {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 200px; /* Limiter la taille pour les petits écrans */
+}
+
+.custom-btn {
+  background-color: #d4a017; /* Jaune moutarde */
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.custom-btn:hover {
+  background-color: #e17a56;
+  color: #000000; /* Orange clair au survol */
+}
+
+/* Boutons Connexion et Inscription */
+.auth-links a {
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-left: 15px;
+  transition: all 0.3s;
+}
+
+.custom-login-btn {
+  background-color: #d4a017;
+  color: white;
+}
+
+.custom-login-btn:hover {
+  background-color: #e17a56;
+  color: #000000;
+}
+
+.custom-signup-btn {
+  background-color: #d4a017; /* Jaune moutarde */
+  color: white;
+}
+
+.custom-signup-btn:hover {
+  background-color: #e17a56;
+  color: rgb(0, 0, 0);
+}
+
+/* Ajustements Responsive */
+@media (max-width: 992px) {
+  .auth-links {
+    text-align: center;
+    margin-top: 15px;
+  }
+  .custom-search,
+  .custom-btn {
+    margin-top: 10px;
+  }
+  .navbar-nav .nav-item {
+    margin-right: 0; /* Enlever la marge sur petits écrans */
+  }
+}
