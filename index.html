@@ -1,318 +1,366 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restyle Marketplace</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
+  <title>ReStyle - Sustainable Fashion</title>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<header>
-  <nav class="navbar">
-    <!-- Logo -->
-    <img class="logo" src="img/logo-removebg-preview.png" alt="Logo">
+<body class="bg-neutral-50">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center space-x-4">
+        <h1 class="text-2xl font-bold">ReStyle</h1>
+        <div class="hidden md:flex items-center space-x-2">
+          <input type="search" placeholder="Search products..." class="w-64 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+          <button class="p-2 hover:bg-neutral-100 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </div>
+      </div>
 
-    <!-- Menu Burger Toggle -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">☰</label>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-sm font-medium hover:text-neutral-900">Accueil</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900">Favoris</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900">Catalogue</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="html/connexion.html" class="text-sm font-medium hover:text-neutral-900">Connexion</a>
+      </nav>
 
-    <!-- Navigation Links -->
-    <ul class="nav-links">
-      <li><a href="#" class="active">Accueil</a></li>
-      <li><a href="#">Catalogue</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Calendar</a></li>
-    </ul>
-
-    <!-- Search Form -->
-    <form class="search-form">
-      <input type="text" class="search-input" placeholder="Rechercher">
-      <button type="submit" class="btn btn-search">Search</button>
-    </form>
-
-    <!-- Authentication Links -->
-    <div class="auth-links">
-      <a href="#loginModal" class="btn btn-login">Se connecter</a>
-      <a href="#signupModal" class="btn btn-signup">S'inscrire</a>
+      <div class="flex items-center space-x-4">
+        <button class="p-2 hover:bg-neutral-100 rounded-lg" >
+          <a href="html/profil.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+        </button>
+      </div>
     </div>
-  </nav>
+  </div>
 </header>
 
-<!-- Login Modal -->
-<div id="loginModal" class="modal">
-  <div class="modal-content">
-    <a href="#" class="close-btn">&times;</a>
-    <h2>Se connecter</h2>
-    <form>
-      <label for="loginEmail">Adresse e-mail</label>
-      <input type="email" id="loginEmail" placeholder="Entrez votre email" required>
-      <label for="loginPassword">Mot de passe</label>
-      <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
-      <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-      <button type="submit" class="btn-primary">Se connecter</button>
-    </form>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center bg-gradient-to-r from-neutral-50 to-neutral-100">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80" alt="Fashion Background" class="w-full h-full object-cover opacity-20">
   </div>
-</div>
 
-<!-- Signup Modal -->
-<div id="signupModal" class="modal">
-  <div class="modal-content">
-    <a href="#" class="close-btn">&times;</a>
-    <h2>S'inscrire</h2>
-    <form>
-      <label for="signupEmail">Adresse e-mail</label>
-      <input type="email" id="signupEmail" placeholder="Entrez votre email" required>
-      <label for="signupPassword">Mot de passe</label>
-      <input type="password" id="signupPassword" placeholder="Créez un mot de passe" required>
-      <label for="signupConfirmPassword">Confirmer le mot de passe</label>
-      <input type="password" id="signupConfirmPassword" placeholder="Confirmez votre mot de passe" required>
-      <button type="submit" class="btn-primary">S'inscrire</button>
-    </form>
-  </div>
-</div>
-
-
-<section class="hero">
-  <div>
-    <h1 class="titre">Exprimez votre style, tout en simplicité.</h1>
-    <p class="par"><strong>Découvrez une marketplace unique pour acheter et vendre des vêtements avec style et éco-responsabilité.</strong></p>
-    <div class="button">
-      <a href="">
-        <button>Explorer le Catalogue</button>
-      </a>
-      <a href="">
-        <button>Rejoignez-nous</button>
+  <div class="relative container mx-auto px-4 text-center">
+    <h1 class="hero-text text-5xl md:text-7xl font-bold mb-6">ReStyle</h1>
+    <p class="hero-text text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+      "ReStyle : Donne une nouvelle vie à tes trésors."
+    </p>
+    <div class="hero-text flex flex-col sm:flex-row items-center justify-center gap-4">
+      <button class="px-8 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors min-w-[200px]">
+        Catalogue
+      </button>
+      <a href="html/connexion.html">
+      <button class="px-8 py-3 border border-neutral-900 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors min-w-[200px]">
+        S'inscrire
+      </button>
       </a>
     </div>
   </div>
 </section>
-<section>
-  <h2 class="der">DERNIERES ANNONCES</h2>
-<div class="owl-carousel owl-theme pad">
-  <div class="item">
-    <a href="catalogue.html">
-      <img class="img" src="img/jean-noir-sanmarin-boy.jpg" alt="">
-    </a>
-  </div>
-  <div class="item">
-    <a href="catalogue.html">
-    <img class="img" src="img/fortnite-Ravage-t-shirts-07.jpg" alt="">
-      </a>
-  </div>
-  <div class="item">
-    <a href="catalogue.html">
-    <img class="img" src="img/tshirt-victoire-royale.jpg" alt="">
-    </a>
-  </div>
-  <div class="item">
-    <a href="catalogue.html">
-    <img class="img" src="img/jean-bleu-clair-delave-deeluxe-homme.jpg" alt="">
-    </a>
-  </div>
-  <div class="item">
-    <img class="img" src="img/voile.png" alt="">
-  </div>
-  <div class="item">
-    <img class="img" src="img/tissu-voile-polyester-noir.jpg" alt="">
-  </div>
-</div>
-</section>
-<section class="fonds">
-  <h2 class="titre">DES JEANS</h2>
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/jean-noir-sanmarin-boy.jpg" alt="Jean noir">
-          <p class="je">Jean noir</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
+
+<!-- Latest Announcements Banner -->
+<section class="py-12 bg-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Dernieres Annonces</h2>
+    <div class="banner-carousel relative">
+      <div class="banner-track flex transition-transform duration-500">
+        <!-- Banner Items -->
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/fortnite-Ravage-t-shirts-07.jpg" alt="Designer Bag" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">Nouveau</span>
+              <h3 class="text-xl font-semibold mt-2">Skin Ravage</h3>
+              <p class="text-gray-600 mt-2">Certifié par Hamiddd</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$1,299</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/jean-noir-sanmarin-boy.jpg" alt="Designer Dress" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">Nouveau</span>
+              <h3 class="text-xl font-semibold mt-2">Pantalon noir </h3>
+              <p class="text-gray-600 mt-2">Sah c chere achete quand meme</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$2,499</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/tissu-voile-coton-rouge-pas-cher-2.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">Voile de Habiba</h3>
+              <p class="text-gray-600 mt-2">Voile habiba celui qui l'chete je le tie</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$3,999</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/tissu-voile-polyester-noir.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">2eme Voile de Habiba</h3>
+              <p class="text-gray-600 mt-2">Voile habiba celui qui l'chete je le tie</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$3,999</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/jean-bleu-clair-delave-deeluxe-homme.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">Jean</h3>
+              <p class="text-gray-600 mt-2">Il i vriment pas chere il i presque gratuit</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$1,000,000</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/tshirt-victoire-royale.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">T-shirt</h3>
+              <p class="text-gray-600 mt-2">Il i vriment pas chere il i presque gratuit lui aussi</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$1,000,000</span>
+                <a href="">
+                <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Banner Navigation -->
+      <button class="banner-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="banner-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
     </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/jean-bleu-fonce-delave-deeluxe-homme.jpg" alt="Jean noir">
-          <p class="je">Jean bleu fonce</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/jean-skinny-effet-use-gris-homme-project-x-paris.png" alt="Jean noir">
-          <p class="je">Jean gris</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/jean-bleu-clair-delave-deeluxe-homme.jpg" alt="Jean noir">
-          <p class="je">Jean bleu clair</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <!-- Répétez la structure pour d'autres éléments -->
-  </div>
-  <h2 class="titre2">DES T-SHIRTS</h2>
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/fortnite-Ravage-t-shirts-07.jpg" alt="T-shirt Fortnite">
-          <p class="je">T-shirt ravage</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/fortnite-Galaxy-t-shirts-02.jpg" alt="T-shirt Fortnite">
-          <p class="je">T-shirt galaxy</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/tshirt-victoire-royale.jpg" alt="T-shirt Fortnite">
-          <p class="je">T-shirt victoire</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/tshirt-chevalier-ultime-voyageur-eternel-declic.jpg" alt="T-shirt Fortnite">
-          <p class="je">T-shirt chevalier</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <!-- Répétez la structure pour d'autres éléments -->
-  </div>
-  <h2 class="titre2">DES VOILES</h2>
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/voile-de-coton-vert-d-eau.jpg" alt="T-shirt Fortnite">
-          <p class="je">voile vert</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/voile.png" alt="T-shirt Fortnite">
-          <p class="je">voile</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/tissu-voile-coton-rouge-pas-cher-2.jpg" alt="T-shirt Fortnite">
-          <p class="je">voile rouge</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="blaze">
-        <a href="#">
-          <img class="ph" src="img/tissu-voile-polyester-noir.jpg" alt="T-shirt Fortnite">
-          <p class="je">voile noir</p>
-          <p class="dis">Disponible</p>
-          <p class="prix">14€99</p>
-          <button class="but">En savoir plus</button>
-        </a>
-      </div>
-    </div>
-    <!-- Répétez la structure pour d'autres éléments -->
   </div>
 </section>
-<section class="newsletter py-5 bg-light">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-6 text-center">
-        <h2 class="mb-4">Abonnez-vous à notre Newsletter</h2>
-        <p class="text-muted mb-4">
-          Restez informé des dernières nouveautés, promotions et mises à jour directement dans votre boîte mail.
-        </p>
-        <form class="d-flex flex-column flex-md-row align-items-center gap-2" action="#" method="post">
-          <input
-                  type="email"
-                  class="form-control me-2"
-                  placeholder="Entrez votre email"
-                  required
-                  aria-label="Adresse email"
-          >
-          <button type="submit" class="btn btn-primary">S'abonner</button>
-        </form>
+
+<!-- Featured Categories -->
+<section class="py-24 bg-white pp">
+  <div class="container mx-auto px-4">
+    <h2 class="category-title text-3xl font-bold text-center mb-12">Categories</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="img/tshirt-victoire-royale.jpg" alt="Women's Fashion" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">T-shirt</h3>
+        </div>
+      </div>
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="img/jean-skinny-effet-use-gris-homme-project-x-paris.png" alt="Women's Fashion" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">Jean</h3>
+        </div>
+      </div>
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="img/tissu-voile-polyester-noir.jpg" alt="Accessories" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">Accessoires</h3>
+        </div>
+      </div>
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80" alt="Home Decor" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">Autres</h3>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript">
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-      0:{
-        items:1
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:5
+<!-- Newsletter -->
+<section class="py-24 bg-neutral-100">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="newsletter-content text-center">
+      <h2 class="text-3xl font-bold mb-4">Rejoins Nous !</h2>
+      <p class="text-gray-600 mb-8">Abonne toi a notre NEWSLETTER.</p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+        <input type="email" placeholder="Entrer votre email" class="flex-1 px-6 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+        <button type="submit" class="px-8 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors whitespace-nowrap">
+          S'abonner
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero Section Animations
+  gsap.from('.hero-text', {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'power4.out'
+  });
+
+  // Category Cards Animation
+  gsap.from('.category-card', {
+    scrollTrigger: {
+      trigger: '.category-card',
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out'
+  });
+
+  // Newsletter Section Animation
+  gsap.from('.newsletter-content', {
+    scrollTrigger: {
+      trigger: '.newsletter-content',
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Banner Items Animation
+  gsap.from('.banner-item', {
+    scrollTrigger: {
+      trigger: '.banner-carousel',
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse'
+    },
+    x: 100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out'
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.banner-track');
+    const items = document.querySelectorAll('.banner-item');
+    const prevBtn = document.querySelector('.banner-prev');
+    const nextBtn = document.querySelector('.banner-next');
+
+    let currentIndex = 0;
+    const itemWidth = items[0].offsetWidth;
+    const itemsPerView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    const maxIndex = items.length - itemsPerView;
+
+    function updateCarousel() {
+      const offset = -currentIndex * itemWidth;
+      track.style.transform = `translateX(${offset}px)`;
+    }
+
+    function slideNext() {
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+      } else {
+        // Loop to start
+        currentIndex = 0;
+        updateCarousel();
       }
     }
-  })
-</script><!-- Bootstrap JS (pour le fonctionnement des modals) -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    function slidePrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      } else {
+        // Loop to end
+        currentIndex = maxIndex;
+        updateCarousel();
+      }
+    }
+
+    // Event Listeners
+    nextBtn.addEventListener('click', slideNext);
+    prevBtn.addEventListener('click', slidePrev);
+
+    // Auto-play
+    let autoplayInterval = setInterval(slideNext, 5000);
+
+    // Pause auto-play on hover
+    track.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
+
+    track.addEventListener('mouseleave', () => {
+      autoplayInterval = setInterval(slideNext, 5000);
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      const newItemsPerView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      if (newItemsPerView !== itemsPerView) {
+        currentIndex = 0;
+        updateCarousel();
+      }
+    });
+  });
+</script>
+<script src="js/animations.js"></script>
+<script src="js/carousel.js"></script>
 </body>
 </html>

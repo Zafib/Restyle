@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Aide - ReStyle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-neutral-100 text-neutral-900">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center space-x-4">
+        <a href="../index.html" class="text-2xl font-bold">ReStyle</a>
+        <div class="hidden md:flex items-center space-x-2">
+          <input type="search" placeholder="Search products..." class="w-64 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+          <button class="p-2 hover:bg-neutral-100 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="../index.html" class="text-sm font-medium hover:text-neutral-900">Accueil</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900">Favoris</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900">Catalogue</a>
+        <a href="connexion.html" class="text-sm font-medium hover:text-neutral-900">Connexion</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button class="p-2 bg-neutral-100 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="bg-neutral-900 text-white py-20 text-center mt-16">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold mb-4">Besoin d'aide ? Nous sommes là pour vous !</h2>
+    <p class="text-lg">Contactez notre équipe ou consultez les questions fréquentes.</p>
+  </div>
+</section>
+
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- Contact Form -->
+    <div class="bg-white shadow-lg rounded-lg p-6 border">
+      <h3 class="text-2xl font-bold mb-4">Formulaire de Contact</h3>
+      <p class="mb-6">Laissez-nous un message et nous vous répondrons rapidement.</p>
+      <form action="#" method="POST" class="space-y-4">
+        <input
+                type="text"
+                name="name"
+                placeholder="Votre nom"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neutral-900"
+        >
+        <input
+                type="email"
+                name="email"
+                placeholder="Votre email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neutral-900"
+        >
+        <textarea
+                name="message"
+                rows="5"
+                placeholder="Votre message"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neutral-900"
+        ></textarea>
+        <button type="submit" class="px-6 py-2 bg-neutral-900 text-white rounded-md hover:bg-neutral-800">
+          Envoyer
+        </button>
+      </form>
+    </div>
+
+    <!-- FAQ Section -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4">Questions Fréquentes (FAQ)</h3>
+      <div class="space-y-4">
+        <div class="bg-white shadow-lg rounded-md p-4 border">
+          <h4 class="font-semibold text-lg">Comment vendre un article ?</h4>
+          <p class="text-neutral-600">Créez un compte, cliquez sur "Vendre un article" et remplissez les détails nécessaires.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-md p-4 border">
+          <h4 class="font-semibold text-lg">Comment acheter un article ?</h4>
+          <p class="text-neutral-600">Explorez notre catalogue, ajoutez un article au panier et procédez au paiement.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-md p-4 border">
+          <h4 class="font-semibold text-lg">Comment contacter le support ?</h4>
+          <p class="text-neutral-600">Utilisez le formulaire de contact ci-contre ou envoyez-nous un email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Information -->
+  <div class="bg-neutral-800 text-white shadow-lg rounded-lg mt-10 p-6 text-center">
+    <h3 class="text-2xl font-bold mb-4">Informations de Contact</h3>
+    <p class="text-lg">Email : <a href="mailto:support@restyle.com" class="text-yellow-500 hover:underline">support@restyle.com</a></p>
+    <p class="text-lg">Téléphone : +33 1 23 45 67 89</p>
+  </div>
+</main>
+
+<!-- GSAP Animations -->
+<script>
+  gsap.from("header", { duration: 1, y: -50, opacity: 0 });
+  gsap.from("section h2", { duration: 1.5, y: -50, opacity: 0, delay: 0.3 });
+  gsap.from("section p", { duration: 1.5, y: 50, opacity: 0, delay: 0.6 });
+  gsap.from(".grid > div", {
+    duration: 1,
+    opacity: 0,
+    y: 50,
+    stagger: 0.3,
+  });
+</script>
+</body>
+</html>

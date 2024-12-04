@@ -1,54 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ReStyle Profile Page</title>
-    <link rel="stylesheet" href="../css/profil.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReStyle - User Profile</title>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<div class="container">
-    <div class="profile-header">
-        <div class="profile-image">
-            <img src="https://via.placeholder.com/100" alt="Profile Picture" />
-        </div>
-        <div class="profile-info">
-            <h2>katykicker</h2>
-            <div class="reviews">49 reviews</div>
-            <p>
-                About: United Kingdom<br />Last seen: 1 hour ago<br />39 followers,
-                1 following
-            </p>
-            <div class="buttons">
-                <a href="#" class="button">Bump your items</a>
-                <a href="#" class="button">Spotlight your wardrobe</a>
+<body class="bg-neutral-50">
+<!-- Header (Same as homepage for consistency) -->
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center space-x-4">
+                <a href="../index.html" class="text-2xl font-bold">ReStyle</a>
+                <div class="hidden md:flex items-center space-x-2">
+                    <input type="search" placeholder="Search products..." class="w-64 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+                    <button class="p-2 hover:bg-neutral-100 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../index.html" class="text-sm font-medium hover:text-neutral-900">Accueil</a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900">Favoris</a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900">Catalogue</a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+                <a href="connexion.html" class="text-sm font-medium hover:text-neutral-900">Connexion</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button class="p-2 bg-neutral-100 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </button>
+
             </div>
         </div>
     </div>
+</header>
 
-    <div class="wardrobe">
-        <div class="item">
-            <img src="https://via.placeholder.com/250" alt="Item 1" />
-            <div class="price">£1.25</div>
-            <a href="#" class="bump-button">Bump</a>
+<!-- Profile Section -->
+<main class="pt-24 pb-12">
+    <div class="container mx-auto px-4">
+        <!-- Profile Header -->
+        <div class="profile-header bg-white rounded-xl p-8 shadow-sm mb-8">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="relative group">
+                    <div class="w-32 h-32 rounded-full overflow-hidden">
+                        <img src="../img/chat.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                    <button class="absolute bottom-0 right-0 bg-neutral-900 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>
+                    </button>
+                </div>
+                <div class="text-center md:text-left">
+                    <h1 class="text-2xl font-bold mb-2">Hamid Anderson</h1>
+                    <p class="text-gray-600 mb-4">Hamid.anderson@example.com</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">9</div>
+                            <div class="text-sm text-gray-600">Suivis</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">156</div>
+                            <div class="text-sm text-gray-600">Vendus</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">5.0</div>
+                            <div class="text-sm text-gray-600">Note</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="item">
-            <img src="https://via.placeholder.com/250" alt="Item 2" />
-            <div class="price">£1.00</div>
-            <a href="#" class="bump-button">Bump</a>
+
+        <!-- Profile Content -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Personal Information -->
+            <div class="md:col-span-1">
+                <div class="profile-section bg-white rounded-xl p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Information Personnel</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                            <input type="text" value="Hamid Anderson" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" value="Hamid.anderson@example.com" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Numero</label>
+                            <input type="tel" value="06 01 02 03 04" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Adresse</label>
+                            <input type="text" value="Algerie 213" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Published Listings -->
+            <div class="md:col-span-2">
+                <div class="profile-section bg-white rounded-xl p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Liste des produits</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Listing Item -->
+                        <div class="listing-item group bg-neutral-50 rounded-lg overflow-hidden">
+                            <div class="relative aspect-square">
+                                <img src="../img/tissu-voile-polyester-noir.jpg" alt="Vintage Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 bg-emerald-500 text-white text-xs px-2 py-1 rounded">Actif</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">Voile noir</h3>
+                                <p class="text-sm text-gray-600 mb-2">Publié il y a 1j</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold">$1,299</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Listing Item -->
+                        <div class="listing-item group bg-neutral-50 rounded-lg overflow-hidden">
+                            <div class="relative aspect-square">
+                                <img src="../img/tshirt-victoire-royale.jpg" alt="Designer Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 bg-emerald-500 text-white text-xs px-2 py-1 rounded">Actif</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">T-shirt</h3>
+                                <p class="text-sm text-gray-600 mb-2">Publié il y a 2 heures</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold">$2,499</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item group bg-neutral-50 rounded-lg overflow-hidden">
+                            <div class="relative aspect-square">
+                                <img src="../img/jean-skinny-effet-use-gris-homme-project-x-paris.png" alt="Designer Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 bg-emerald-500 text-white text-xs px-2 py-1 rounded">Actif</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">Jean</h3>
+                                <p class="text-sm text-gray-600 mb-2">Publié il y a 5 heures</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold">$1,000,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item group bg-neutral-50 rounded-lg overflow-hidden">
+                            <div class="relative aspect-square">
+                                <img src="../img/voile-de-coton-vert-d-eau.jpg" alt="Designer Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                <span class="absolute top-2 right-2 bg-emerald-500 text-white text-xs px-2 py-1 rounded">Active</span>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold mb-1">Voile rouge</h3>
+                                <p class="text-sm text-gray-600 mb-2">Publié il y a 3j</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold">$1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <button class="mt-8 w-full px-4 py-2 border border-neutral-900 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors">
+                        Load More Listings
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="item">
-            <img src="https://via.placeholder.com/250" alt="Item 3" />
-            <div class="price">£1.25</div>
-            <a href="#" class="bump-button">Bump</a>
-        </div>
-        <div class="item">
-            <img src="https://via.placeholder.com/250" alt="Item 4" />
-            <div class="price">£1.25</div>
-            <a href="#" class="bump-button">Bump</a>
-        </div>
-        <!-- More items can be added similarly -->
     </div>
-</div>
+</main>
+<script>
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Profile Header Animation
+    gsap.from('.profile-header', {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+    });
+
+    // Profile Sections Animation
+    gsap.from('.profile-section', {
+        scrollTrigger: {
+            trigger: '.profile-section',
+            start: 'top bottom-=100',
+            toggleActions: 'play none none reverse'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out'
+    });
+
+    // Listing Items Animation
+    gsap.from('.listing-item', {
+        scrollTrigger: {
+            trigger: '.listing-item',
+            start: 'top bottom-=100',
+            toggleActions: 'play none none reverse'
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'power3.out'
+    });
+
+    // Form Fields Animation
+    const formFields = document.querySelectorAll('input');
+    gsap.from(formFields, {
+        scrollTrigger: {
+            trigger: formFields[0],
+            start: 'top bottom-=100',
+            toggleActions: 'play none none reverse'
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.1,
+        ease: 'power2.out'
+    });
+</script>
+
+<script src="js/profile-animations.js"></script>
 </body>
 </html>
