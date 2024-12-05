@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReStyle - Sustainable Fashion</title>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="profil.css">
+  <!-- Titre et Description -->
+  <title>ReStyle - Achetez, vendez et redonnez vie à vos vêtements</title>
+  <meta name="description" content="ReStyle est une plateforme innovante pour acheter, vendre et recycler vos vêtements. Rejoignez notre communauté pour un shopping durable et stylé.">
+
+  <!-- Balises de mots-clés -->
+  <meta name="keywords" content="ReStyle, vêtements d'occasion, mode durable, vente en ligne, recyclage textile, mode éthique, vêtements vintage, vêtements seconde main, shopping responsable">
+
+  <!-- Balises Open Graph (pour les réseaux sociaux comme Facebook) -->
+  <meta property="og:title" content="ReStyle - Achetez, vendez et redonnez vie à vos vêtements">
+  <meta property="og:description" content="Découvrez ReStyle, la plateforme où la mode rencontre la durabilité. Achetez, vendez et recyclez vos vêtements facilement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.restyle.com">
+  <meta property="og:image" content="https://www.restyle.com/assets/images/restyle-banner.jpg">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Balises Twitter Card (pour le partage sur Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReStyle - Achetez, vendez et redonnez vie à vos vêtements">
+  <meta name="twitter:description" content="Rejoignez la révolution de la mode durable avec ReStyle. Achetez, vendez et recyclez vos vêtements en toute simplicité.">
+  <meta name="twitter:image" content="https://www.restyle.com/assets/images/restyle-banner.jpg">
+  <meta name="twitter:site" content="@ReStyleOfficiel">
+  <link rel="icon" href="img/logo-removebg-preview.png" type="image/png">
+</head>
+<body class="bg-neutral-50">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center space-x-4">
+        <h1 class="text-2xl font-bold">ReStyle</h1>
+        <div class="hidden md:flex items-center space-x-2">
+          <input type="search" placeholder="Search products..." class="w-64 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+          <button class="p-2 hover:bg-neutral-100 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="index.html" class="text-sm font-medium hover:text-neutral-900">Accueil</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900">Favoris</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900">Catalogue</a>
+        <a href="html/contact.html" class="text-sm font-medium hover:text-neutral-900">Contact</a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="#" class="text-sm font-medium hover:text-neutral-900"></a>
+        <a href="html/connexion.html" class="text-sm font-medium hover:text-neutral-900">Connexion</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button class="p-2 hover:bg-neutral-100 rounded-lg" >
+          <a href="html/profil.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center bg-gradient-to-r from-neutral-50 to-neutral-100">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80" alt="Fashion Background" class="w-full h-full object-cover opacity-20">
+  </div>
+
+  <div class="relative container mx-auto px-4 text-center">
+    <h1 class="hero-text text-5xl md:text-7xl font-bold mb-6">ReStyle</h1>
+    <p class="hero-text text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+      "ReStyle : Donne une nouvelle vie à tes trésors."
+    </p>
+    <div class="hero-text flex flex-col sm:flex-row items-center justify-center gap-4">
+      <button class="px-8 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors min-w-[200px]">
+        Catalogue
+      </button>
+      <a href="html/connexion.html">
+      <button class="px-8 py-3 border border-neutral-900 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors min-w-[200px]">
+        S'inscrire
+      </button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Announcements Banner -->
+<section class="py-12 bg-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Dernieres Annonces</h2>
+    <div class="banner-carousel relative">
+      <div class="banner-track flex transition-transform duration-500">
+        <!-- Banner Items -->
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/fortnite-Ravage-t-shirts-07.jpg" alt="Designer Bag" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">Nouveau</span>
+              <h3 class="text-xl font-semibold mt-2">Skin Ravage</h3>
+              <p class="text-gray-600 mt-2">Certifié par Hamiddd</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$1,299</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/jean-noir-sanmarin-boy.jpg" alt="Designer Dress" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">Nouveau</span>
+              <h3 class="text-xl font-semibold mt-2">Pantalon noir </h3>
+              <p class="text-gray-600 mt-2">Sah c chere achete quand meme</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$2,499</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/tissu-voile-coton-rouge-pas-cher-2.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">Voile de Habiba</h3>
+              <p class="text-gray-600 mt-2">Voile habiba celui qui l'chete je le tie</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$3,999</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/tissu-voile-polyester-noir.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">2eme Voile de Habiba</h3>
+              <p class="text-gray-600 mt-2">Voile habiba celui qui l'chete je le tie</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$3,999</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/jean-bleu-clair-delave-deeluxe-homme.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">Jean</h3>
+              <p class="text-gray-600 mt-2">Il i vriment pas chere il i presque gratuit</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$1,000,000</span>
+                <a href="">
+                  <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+          <div class="bg-neutral-50 rounded-xl overflow-hidden">
+            <img src="img/tshirt-victoire-royale.jpg" alt="Jewelry Set" class="w-full h-64 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-emerald-600 font-medium">A l'instant</span>
+              <h3 class="text-xl font-semibold mt-2">T-shirt</h3>
+              <p class="text-gray-600 mt-2">Il i vriment pas chere il i presque gratuit lui aussi</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-lg font-bold">$1,000,000</span>
+                <a href="">
+                <button class="text-sm font-medium text-neutral-900 hover:underline">Details</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Banner Navigation -->
+      <button class="banner-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="banner-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Categories -->
+<section class="py-24 bg-white pp">
+  <div class="container mx-auto px-4">
+    <h2 class="category-title text-3xl font-bold text-center mb-12">Categories</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="img/tshirt-victoire-royale.jpg" alt="Women's Fashion" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">T-shirt</h3>
+        </div>
+      </div>
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="img/jean-skinny-effet-use-gris-homme-project-x-paris.png" alt="Women's Fashion" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">Jean</h3>
+        </div>
+      </div>
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="img/tissu-voile-polyester-noir.jpg" alt="Accessories" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">Accessoires</h3>
+        </div>
+      </div>
+      <div class="category-card group relative overflow-hidden rounded-xl">
+        <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80" alt="Home Decor" class="w-full h-80 object-cover transition-transform group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+          <h3 class="text-white text-xl font-semibold">Autres</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="py-24 bg-neutral-100">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="newsletter-content text-center">
+      <h2 class="text-3xl font-bold mb-4">Rejoins Nous !</h2>
+      <p class="text-gray-600 mb-8">Abonne toi a notre NEWSLETTER.</p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+        <input type="email" placeholder="Entrer votre email" class="flex-1 px-6 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-neutral-900">
+        <button type="submit" class="px-8 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors whitespace-nowrap">
+          S'abonner
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  // Register ScrollTrigger plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero Section Animations
+  gsap.from('.hero-text', {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'power4.out'
+  });
+
+  // Category Cards Animation
+  gsap.from('.category-card', {
+    scrollTrigger: {
+      trigger: '.category-card',
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out'
+  });
+
+  // Newsletter Section Animation
+  gsap.from('.newsletter-content', {
+    scrollTrigger: {
+      trigger: '.newsletter-content',
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Banner Items Animation
+  gsap.from('.banner-item', {
+    scrollTrigger: {
+      trigger: '.banner-carousel',
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse'
+    },
+    x: 100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out'
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.banner-track');
+    const items = document.querySelectorAll('.banner-item');
+    const prevBtn = document.querySelector('.banner-prev');
+    const nextBtn = document.querySelector('.banner-next');
+
+    let currentIndex = 0;
+    const itemWidth = items[0].offsetWidth;
+    const itemsPerView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    const maxIndex = items.length - itemsPerView;
+
+    function updateCarousel() {
+      const offset = -currentIndex * itemWidth;
+      track.style.transform = `translateX(${offset}px)`;
+    }
+
+    function slideNext() {
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+      } else {
+        // Loop to start
+        currentIndex = 0;
+        updateCarousel();
+      }
+    }
+
+    function slidePrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      } else {
+        // Loop to end
+        currentIndex = maxIndex;
+        updateCarousel();
+      }
+    }
+
+    // Event Listeners
+    nextBtn.addEventListener('click', slideNext);
+    prevBtn.addEventListener('click', slidePrev);
+
+    // Auto-play
+    let autoplayInterval = setInterval(slideNext, 5000);
+
+    // Pause auto-play on hover
+    track.addEventListener('mouseenter', () => {
+      clearInterval(autoplayInterval);
+    });
+
+    track.addEventListener('mouseleave', () => {
+      autoplayInterval = setInterval(slideNext, 5000);
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      const newItemsPerView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      if (newItemsPerView !== itemsPerView) {
+        currentIndex = 0;
+        updateCarousel();
+      }
+    });
+  });
+</script>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>À propos</h4>
+      <p>
+        Nous sommes une plateforme dédiée à l'achat et à la revente de
+        produits, offrant une expérience sécurisée et conviviale.
+      </p>
+    </div>
+    <div class="footer-section">
+      <h4>Liens utiles</h4>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">catalogue</a></li>
+        <li><a href="#">favoris</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Mention légal</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Nous contacter</h4>
+      <p>Email : ReStyle@nfs.com</p>
+      <p>Téléphone : +33 1 23 45 67 89</p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 MonSite d'Achat-Revente. Tous droits réservés.</p>
+      <div class="social-icons">
+        <a href=""><img src="img/instagram.webp" alt="Instagram" /></a>
+        <a href="#"><img src="img/twitter.webp" alt="Twitter" /></a>
+        <a href="#"><img src="img/linkedin.png" alt="linkedin" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/animations.js"></script>
+<script src="js/carousel.js"></script>
+</body>
+</html>
